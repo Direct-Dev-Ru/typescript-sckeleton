@@ -17,6 +17,7 @@ class Cuboid implements IShape2D, IShape3D {
   getVolume() {
     return Math.pow(this.length, 3);
   }
+  
 }
 
 export default Cuboid;

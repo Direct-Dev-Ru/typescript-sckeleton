@@ -4,6 +4,9 @@ import Circle from './solid/01_S/circle';
 import Triangle from './solid/02_O/triangle';
 import VolumeCalculator from './solid/03_L/volume-calculator';
 import Cuboid from './solid/04_I/cuboid';
+import MysqlDb from './solid/05_D/mysql-db';
+import PostgresDb from './solid/05_D/postgres-db';
+import PasswordCheck from './solid/05_D/password-reminder';
 
 (() => {
   const square = new Square(2);
@@ -20,5 +23,16 @@ import Cuboid from './solid/04_I/cuboid';
   const cuboid = new Cuboid(3);
   const principle_04_sample = new AreaCalculator([square, circle, triangle, cuboid]);
   console.log('04_I principle: ', principle_04_sample.sum());
+
+  console.log("------------05-------------");
+  
+
+  const mySQlConn = new MysqlDb();
+  const myPGConn = new PostgresDb();
+  const checkPwdMySQL = new PasswordCheck(mySQlConn);
+  const checkPwdPG = new PasswordCheck(myPGConn);
+  console.log(checkPwdMySQL.checkPwd());
+  console.log(checkPwdPG.checkPwd());
+  
 
 })();
