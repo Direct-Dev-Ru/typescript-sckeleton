@@ -1,4 +1,6 @@
-class Square {
+import { IShape } from './shapeinterface';
+
+class Square implements IShape {
   private readonly length: number;
 
   constructor(length: number) {
